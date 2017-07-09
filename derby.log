@@ -1,7 +1,7 @@
 ----------------------------------------------------------------
-Sun Jul 09 13:27:09 IST 2017:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-015d-265a-2a42-00000363f170 
-on database directory E:\db\java\.db\DistData with class loader sun.misc.Launcher$AppClassLoader@4e25154f 
+Sun Jul 09 14:37:02 IST 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-015d-269a-2301-000003656998 
+on database directory C:\Users\USER\Documents\NetBeansProjects\DistData\src\db\DistData with class loader sun.misc.Launcher$AppClassLoader@4e25154f 
 Loaded from file:/C:/Users/USER/Documents/NetBeansProjects/DistData/lib/derby.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_131-b11
