@@ -7,9 +7,9 @@ import java.sql.SQLException;
 import java.sql.PreparedStatement;
 
 public class DBConncection {
-    public static void main(String[] args) {
-        PrimaryConnection();
-    }
+//    public static void main(String[] args) {
+//        PrimaryConnection();
+//    }
        public static void PrimaryConnection(){
         String userName="us3r";
         String pass="pass";
