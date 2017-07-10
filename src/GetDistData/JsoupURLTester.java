@@ -2,6 +2,12 @@ package GetDistData;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -17,7 +23,10 @@ public class JsoupURLTester {
     private static Document doc;
 
     public static void main(String[] args) {
-
+        String sqlQuery = "INSERT INTO"+
+                "US3R.DIST_DATA (DIST_NAME,PROP_NAME,MOB,LANDLINE,EMAIL_AO_NAME)"+
+                "VALUE (?,?,?,?,?,?);";
+        
         for (int counter = 1081;; counter++) {
 
             //int il = 2;
@@ -28,7 +37,7 @@ public class JsoupURLTester {
                         .userAgent("Mozilla/5.0 ")
                         .timeout(600)
                         .get();
-                System.out.println("Connected");
+                System.out.println("Connected");              
             } catch (IOException ex) {
                 System.err.println(ex);
             }
@@ -60,7 +69,26 @@ public class JsoupURLTester {
             System.out.print(AO_Name + "\n");
 
             System.out.println("\n" + counter + "\n");
-
+            try (Connection conn = DBConncection.getConnection();
+                PreparedStatement prst=conn
+                        .prepareStatement(sqlQuery,Statement.RETURN_GENERATED_KEYS);) {
+                
+                prst.setString(1,distName );
+                prst.setString(2,PropName );
+                prst.setString(3,LandlindNo );
+                prst.setString(4,MobileNo );
+                prst.setString(5,eMail );
+                prst.setString(6,AO_Name );
+                
+                int affected = prst.executeUpdate();
+                if(affected==1){
+                    System.out.println("Sucessfully Inserted");
+                } else {
+                    System.out.println("Fiald to insert");
+                }
+               
+            } catch (Exception e) {
+            }
         }
     }
 }

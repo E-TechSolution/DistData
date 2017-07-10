@@ -8,9 +8,9 @@ import java.sql.PreparedStatement;
 
 public class DBConncection {
 //    public static void main(String[] args) {
-//        PrimaryConnection();
+//        getConnection();
 //    }
-       public static void PrimaryConnection(){
+       public static Connection getConnection(){
         String userName="us3r";
         String pass="pass";
         String driverUrl=null;
@@ -27,7 +27,9 @@ public class DBConncection {
         } catch (SQLException e) {
             System.err.println(e);
         }
+           return null;
         }
-        }
+}
+        
 //Second Commit
 //third commit
