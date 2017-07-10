@@ -14,7 +14,7 @@ public class DBConncection {
         String userName="us3r";
         String pass="pass";
         String driverUrl=null;
-        String Connurl="jdbc:derby:src/db/DistData;create=true";//E:\\db\\java\\.db
+        String Connurl="jdbc:derby:src/db/DistData";//E:\\db\\java\\.db
         PreparedStatement pstmt = null;
         String sqlQuey="INSERT INTO";
         try (
