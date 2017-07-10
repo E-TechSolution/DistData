@@ -15,9 +15,11 @@ import org.jsoup.select.Elements;
 public class JsoupURLTester {
 
     private static Document doc;
-
-    
     public static void main(String[] args) {
+        
+    }
+    
+   private static void GetData() {
         for (int i = 1081; ;i++) {
             
             //int il = 2;
@@ -25,10 +27,8 @@ public class JsoupURLTester {
             
         
         try {
-//            File input = new File("C:\\Users\\Arnab\\Desktop\\indane.html");
-//            doc = Jsoup.parse(input,"utf-8","https://indane.co.in");
             doc = Jsoup.connect(websiteUrl)//connection @Arnab
-             .userAgent("Mozilla/5.0 ")//(Windows NT 6.1; rv:55.0) Gecko/20100101 Firefox/55.0
+             .userAgent("Mozilla/5.0 ")
              .timeout(600)
              .get();
             System.out.println("Connected");
@@ -60,9 +60,7 @@ public class JsoupURLTester {
          System.out.print(rowFive+"\n");
 
          System.out.println("\n"+i+"\n");        
-//if (distPropName == null);
-//    break;
-    
+
     
 }
 }
